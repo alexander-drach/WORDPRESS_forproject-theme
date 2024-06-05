@@ -1,0 +1,29 @@
+.map {
+    width: 100%;
+
+    iframe,
+    p {
+        height: 100%;
+        width: 100%;
+        border: none;
+    }
+
+    &--main {
+        border-top: 5px solid $color-middle-grey;
+        border-bottom: 5px solid $color-middle-grey;
+        height: 560px;
+    }
+
+    &--single {
+        border-top: 2px solid #bababa;
+        height: 660px;
+
+        @include vp-1023 {
+            height: 450px;
+        }
+
+        @include vp-767 {
+            height: 350px;
+        }
+    }
+}

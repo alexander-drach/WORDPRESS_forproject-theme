@@ -1,0 +1,72 @@
+.header {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  padding-top: 48px;
+  padding-bottom: 25px;
+  background-color: transparent;
+  color: $color-default-white;
+  z-index: 8000;
+
+  &.admin-toolbar {
+    top: 32px;
+  }
+
+  a {
+    color: $color-default-black;
+
+    //@include hover-focus {
+    //  color: $color-gold;
+    //}
+  }
+
+  line-height: 100%;
+
+  &.open {
+    .hamb {
+      //background-image: url("../img/svg/icon-close.svg");
+    }
+
+    .nav {
+      opacity: 1;
+      pointer-events: all;
+    }
+  }
+
+  .header_inner {
+    display: flex;
+    justify-content: space-between;
+
+    @include vp-1023 {
+      justify-content: space-between;
+    }
+  }
+
+  .main-menu {
+    display: flex;
+
+    //@include vp-1023 {
+    //  flex-direction: column;
+    //  margin-bottom: 50px;
+    //}
+
+    li {
+      margin-right: 36px;
+
+      //@include vp-1023 {
+      //  margin-right: 0;
+      //
+      //  margin-bottom: 40px;
+      //}
+
+      &:last-child {
+        margin-right: 0;
+
+        @include vp-1023 {
+          margin-bottom: 0;
+        }
+      }
+    }
+  }
+}

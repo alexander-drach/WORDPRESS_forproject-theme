@@ -1,0 +1,33 @@
+.workers__list {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  column-gap: 20px;
+  row-gap: 120px;
+}
+
+.workers__item {
+  text-align: center;
+  color: #252233;
+  line-height: 140%;
+}
+
+.workers__first-name {
+  display: block;
+  font-size: 20px;
+
+}
+
+.workers__last-name {
+  display: block;
+  font-size: 20px;
+  color: #252233;
+}
+
+.workers__position {
+  display: block;
+  font-size: 16px;
+  line-height: 140%;
+  color: #252233;
+  opacity: 0.8;
+  margin-top: 12px;
+}
