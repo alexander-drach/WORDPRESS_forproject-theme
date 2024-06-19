@@ -49,7 +49,9 @@ Template post type: post
                              </ul>
                          </div><!-- Авторы проекта, архитекторы -->
                          <div class="info-team-item">
+                            <?php if (have_rows('konstruktory')): ?>
                              <span>Конструкторы:</span>
+                             <?php endif; ?>
                              <ul class="info-values-list">
                                  <?php
                                  if (have_rows('konstruktory')):
@@ -64,7 +66,9 @@ Template post type: post
                              </ul>
                          </div><!-- Конструкторы -->
                          <div class="info-team-item">
+                            <?php if (have_rows('vizualizatory')): ?>
                              <span>Визуализаторы:</span>
+                             <?php endif; ?>
                              <ul class="info-values-list">
                                  <?php
                                  if (have_rows('vizualizatory')):
@@ -114,16 +118,61 @@ Template post type: post
 
             <?php if(get_field('zadachi_proekta')) : ?>
                 <div class="task-project">
-                    <h3>Задачи проекта:</h3>
-                    <div class="info-item__value"><?php the_field('zadachi_proekta') ?></div>
+                    <h2>Задачи проекта:</h3>
+                    <div>
+                        <?php the_field('zadachi_proekta') ?>
+                    </div>
                 </div>
             <?php endif; ?>
 
             <?php if(get_field('opisanie_proekta')) : ?>
                 <div class="desc-project">
-                    <div class="info-item__value"><?php the_field('opisanie_proekta') ?></div>
+                    <?php the_field('opisanie_proekta') ?>
                 </div>
             <?php endif; ?>
-        </div>
+
+            <?php if( have_rows('fotografii_proekta') ): ?>
+                <ul class="list photo-list">
+                    <?php while( have_rows('fotografii_proekta') ): the_row(); 
+                        $image = get_sub_field('fotografiya_proekta');
+                        ?>
+                        <li class="photo-item">
+                            <img src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt'] ?>">
+                        </li>
+                    <?php endwhile; ?>
+                </ul>
+            <?php endif; ?><!-- Фотографии проекта -->
+
+            <?php if(get_field('zagolovok_interery')) : ?>
+                <h2 class="title-interior"><?php the_field('zagolovok_interery') ?></h2>
+            <?php endif; ?>
+
+            <?php if(get_field('opisanie_intererov_tekst')) : ?>
+                <div class="desc-interior">
+                    <?php the_field('opisanie_intererov_tekst') ?>
+                </div>
+            <?php endif; ?>
+
+            <?php if( have_rows('foto_intererov') ): ?>
+                <div class="slider-interior">
+                    <div class="swiper-pagination">
+                        <button type="button" class="trainers__slider-button-prev swiper-button-prev" aria-label="Назад"></button>
+                        <button type="button" class="trainers__slider-button-next swiper-button-next" aria-label="Вперед"></button>
+                    </div>
+                    <ul class="swiper list photo-interior-list">
+                        <div class="swiper-wrapper">
+                            <?php while( have_rows('foto_intererov') ): the_row(); 
+                                $image = get_sub_field('foto_interera');
+                                ?>
+                                <li class="photo-interior-item swiper-slide">
+                                
+                                    <img src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt'] ?>">
+                                </li>
+                            <?php endwhile; ?>
+                        </div><!-- swiper-wrapper -->                 
+                    </ul>
+                </div>
+            <?php endif; ?><!-- Фотографии проекта -->
+        </div><!-- container -->
     </main>
 <?php get_footer(); ?>

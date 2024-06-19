@@ -1,0 +1,63 @@
+.contact__inner {
+    display: grid;
+    grid-template-columns: 36% 64%;
+    gap: 80px;
+    padding-top: 100px;
+    padding-bottom: 100px;
+    padding-left: 135px;
+    padding-right: 135px;
+    background-color: #FAFAFA;
+
+    @include vp-1023 {
+        grid-template-columns: 1fr;
+        column-gap: 20px;
+        row-gap: 30px;
+        padding-top: 40px;
+        padding-bottom: 40px;
+        padding-left: 40px;
+        padding-right: 40px;
+    }
+
+    @include vp-767 {
+        grid-template-columns: 1fr;
+        column-gap: 20px;
+        row-gap: 30px;
+        padding-top: 30px;
+        padding-bottom: 30px;
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+
+    .messengers-list {
+        display: flex;
+        align-items: center;
+
+        a {
+            margin-right: 8px;
+
+            &:last-child {
+                margin-right: 0;
+            }
+        }
+    }
+}
+
+.contact__item {
+    margin-bottom: 40px;
+}
+
+.icon-contact {
+    margin-bottom: 10px;
+}
+
+.label-contact {
+    color: $color-default-black;
+    font-weight: 600;
+    margin-bottom: 8px;
+    line-height: 140%;
+}
+
+.link-contact {
+    color: $color-default-black;
+    line-height: 140%;
+}

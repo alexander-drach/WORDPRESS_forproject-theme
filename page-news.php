@@ -4,7 +4,7 @@ Template Name: Страница - Новости
 */
 ?>
 <?php get_header(); ?>
-    <main class="">
+    <main class="page-content">
         <div class="container">
             <?php the_content(); ?>
         </div>

@@ -1,0 +1,45 @@
+.pager {
+    display: flex;
+    justify-content: center;
+    margin-top: 140px;
+
+    @include vp-1023 {
+        margin-top: 40px;
+    }
+    
+    @include vp-639 {
+    }
+
+    .nav-links {
+        display: flex;
+        align-items: center;       
+
+        .page-numbers {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 32px;
+            height: 32px;
+            border: 1px solid #F1F1F1;
+            color: $color-default-black;
+            border-radius: 50%;
+            margin-right: 8px;
+
+            &:last-child {
+                margin-right: 0;
+            }
+        }
+
+        .current {
+            color: $color-default-white;
+            background-color: #B9B9B9;
+        }
+
+        .prev,
+        .next {
+            border: none;
+            width: auto;
+            height: auto;
+        }
+    }
+}

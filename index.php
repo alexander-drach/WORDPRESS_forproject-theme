@@ -4,55 +4,80 @@ Template Name: Страница - Главная
 */
 ?>
 <?php get_header(); ?>
-    <main>
-        <div class="container">
-            <ul class="list services__list">
-                <?php
-                $args=array(
-                    'post_type' => 'post',
-                    'showposts'=> 6
-                );
+    <main class="homepage-content">
+        <div class="intro">
+                <?php 
+                    $image = get_field('glavnyj_banner');
+                    if( !empty( $image ) ): ?>
+                        <img class="intro-desktop" src="<?php echo esc_url($image['url']); ?>" alt="<?php echo esc_attr($image['alt']); ?>" />
+                    <?php endif; ?>
+            </div>
+        <div class="container">            
+            <section class="project">
+                <h2>Проекты</h2>
+                <ul class="list project__list">
+                    <?php
+                    $args=array(
+                        'post_type' => 'post',
+                        'showposts'=> 6
+                    );
 
-                $acsessuar = get_posts($args);
-                foreach ($acsessuar as $post) :
-                    setup_postdata($post);
-                    ?>
+                    $projects = get_posts($args);
+                    foreach ($projects as $post) :
+                        setup_postdata($post);
+                        ?>
+                        <a href="<?php the_permalink()?>">
+                            <li class="project__item">
+                                <div class="project__thumb">
+                                    <?php the_post_thumbnail('project-thumb');?>
+                                </div>
+                                <h3 class="project__title"><?php the_title(); ?></h3>
+                            </li>
+                        </a>
 
-                    <li class="services__item">
-                        <div class="services__icon">
-                        </div>
-                        <h3 class="services__title"><?php the_title(); ?></h3>
-                    </li>
+                    <?php endforeach; ?>
+                </ul>
+                <div class="btn-wrapper btn-wrapper--center">
+                    <a href="http://forproekt/proekty/" class="btn btn--blue">Все проекты</a>
+                </div>
+                <?php the_posts_pagination(); ?>
+            </section>
 
-                <?php endforeach; ?>
-            </ul>
-            <ul class="list services__list">
-                <?php
-                $args=array(
-                    'post_type' => 'f_services',
-                    'showposts'=> 6
-                );
+            <section class="services">
+                <h2>Услуги</h2>
+                <ul class="list services__list">
+                    <?php
+                    $args=array(
+                        'post_type' => 'f_services',
+                        'showposts'=> 6
+                    );
 
-                $acsessuar = get_posts($args);
-                foreach ($acsessuar as $post) :
-                    setup_postdata($post);
-                    ?>
+                    $services = get_posts($args);
+                    foreach ($services as $post) :
+                        setup_postdata($post);
+                        ?>
 
-                    <li class="services__item">
-                        <div class="services__icon">
-                            <?php
-                                $image = get_field('ikonka');
-                            ?>
-                            <img src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt'] ?>" >
-                        </div>
-                        <h3 class="services__title"><?php the_title(); ?></h3>
-                        <div class="services__desc">
-                            <?php the_content(); ?>
-                        </div>
-                    </li>
+                        <li class="services__item">
+                            <div class="services__icon">
+                                <?php
+                                    $image = get_field('ikonka');
+                                ?>
+                                <?php if($image) : ?>
+                                    <img src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt'] ?>" >
+                                <?php endif ?>
+                            </div>
+                            <h3 class="services__title"><?php the_title(); ?></h3>
+                            <div class="services__desc">
+                                <?php the_content(); ?>
+                            </div>
+                        </li>
 
-                <?php endforeach; ?>
-            </ul>
+                    <?php endforeach; ?>
+                </ul>
+                <div class="btn-wrapper btn-wrapper--center">
+                    <a href="http://forproekt/uslugi/" class="btn btn--blue">Все услуги</a>
+                </div>
+            </section>            
         </div>
     </main>
 <?php get_footer(); ?>

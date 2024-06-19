@@ -25,6 +25,7 @@
 @import "blocks/custom-select";
 @import "blocks/list";
 
+
 @import "blocks/header";
 @import "blocks/footer";
 
@@ -32,13 +33,24 @@
 @import "blocks/filter";
 @import "blocks/card";
 @import "blocks/map";
-@import "blocks/single";
-@import "blocks/single-project";
+@import "blocks/pager.scss";
+
 @import "blocks/about";
-@import "blocks/services";
-@import "blocks/category";
-@import "blocks/page-404";
-@import "blocks/page-report";
+
+// Pages
+// ---------------------------------
+
+@import "pages/homepage.scss";
+@import "pages/page-content.scss";
+@import "pages/page-404";
+@import "pages/page-report";
+@import "pages/projects.scss";
+@import "pages/services";
+@import "pages/category";
+@import "pages/page-contact.scss";
+@import "pages/single-project";
+@import "pages/single-news.scss";
+@import "pages/single";
 
 // ---------------------------------
 

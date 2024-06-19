@@ -2,6 +2,7 @@ import {iosVhFix} from './utils/ios-vh-fix';
 import {initModals} from './modules/modals/init-modals';
 import {Form} from './modules/form-validate/form';
 import {openMenu} from './modules/mobile-menu/menu';
+import {stickyHeader} from './modules/sticky-header/stticky-header';
 import {slider} from './modules/slider/slider';
 import {adminToolbar} from './modules/admin-toolbal/admin-toolbar.js';
 
@@ -25,6 +26,7 @@ window.addEventListener('DOMContentLoaded', () => {
     window.form = form;
     form.init();
     openMenu();
+    stickyHeader();
     slider();
     adminToolbar();
   });

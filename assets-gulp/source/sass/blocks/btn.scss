@@ -1,2 +1,34 @@
 .btn {
+    display: inline-block;
+    font-weight: 600;
+    border-radius: 8px;
+    border: none;
+    padding: 24px 60px;
+    transition: all 0.3s ease;
+
+    &--blue {
+        background-color: #3FA9F5;
+        color: $color-default-white;
+
+        @include hover-focus {
+            background-color: $color-default-black;
+        }
+    }
+
+    &--black {
+        background-color: $color-default-black;
+        color: $color-default-white;
+
+        @include hover-focus {
+            background-color: #3FA9F5;
+        }
+    }
+}
+
+.btn-wrapper {
+    display: flex;
+}
+
+.btn-wrapper--center {
+    justify-content: center;
 }

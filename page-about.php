@@ -4,7 +4,7 @@ Template Name: Страница - О нас
 */
 ?>
 <?php get_header(); ?>
-    <main class="">
+    <main class="page-content">
         <div class="container">
             <h1 class="page-title"><?php the_title(); ?></h1>
             <div class="page_desc">
@@ -27,10 +27,14 @@ Template Name: Страница - О нас
                             <?php
                             $image = get_field('foto');
                             ?>
-                            <img src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt'] ?>" >
+                            <?php if($image) : ?>
+                                <img src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt'] ?>" >
+                            <?php endif ?>
                         </div>
-                        <span class="workers__first-name"><?php the_field('imya'); ?></span>
-                        <span class="workers__last-name"><?php the_title(); ?></span>
+                        <div>
+                            <span class="workers__first-name"><?php the_field('imya'); ?></span>
+                            <span class="workers__last-name"><?php the_title(); ?></span>
+                        </div>                        
                         <span class="workers__position"><?php the_field('dolzhnost'); ?></span>
                     </li>
 

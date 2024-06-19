@@ -1,0 +1,57 @@
+.homepage-content {
+    padding-bottom: 140px;
+
+    @include vp-1023 {
+        padding-bottom: 70px;
+    }
+
+    @include vp-639 {
+        padding-bottom: 40px;
+    }
+    
+    h2 {
+        font-size: 64px;
+        font-weight: 300;
+        margin-bottom: 60px;
+
+        @include vp-1023 {
+            font-size: 48px;
+            margin-bottom: 40px;
+        }
+    
+        @include vp-639 {
+            font-size: 36px;
+            margin-bottom: 30px;
+        }
+    }
+
+    .project {
+        margin-bottom: 140px;
+
+        @include vp-1023 {
+            margin-bottom: 70px;
+        }
+    
+        @include vp-639 {
+            margin-bottom: 40px;
+        }
+    }
+
+    .services {
+        h2 {
+            text-align: center;
+        }
+    }
+
+    .btn-wrapper {
+        margin-top: 70px;
+
+        @include vp-1023 {
+            margin-top: 40px;
+        }
+    
+        @include vp-639 {
+            margin-top: 25px;
+        }
+    }
+}

@@ -4,7 +4,7 @@ Template Name: Страница - Услуги
 */
 ?>
 <?php get_header(); ?>
-    <main class="">
+    <main class="page-content">
         <div class="container">
             <h1 class="page-title"><?php the_title(); ?></h1>
             <div class="page_desc">
@@ -27,7 +27,9 @@ Template Name: Страница - Услуги
                             <?php
                                 $image = get_field('ikonka');
                             ?>
-                            <img src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt'] ?>" >
+                            <?php if($image) : ?>
+                                <img src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt'] ?>" >
+                            <?php endif ?>
                         </div>
                         <h3 class="services__title"><?php the_title(); ?></h3>
                         <div class="services__desc">

@@ -1,44 +1,68 @@
 <?php
+$name = $_POST['name'];
 $phone = $_POST['tel'];
-$address = $_POST['address'];
-$date_on = $_POST['date_on'];
-$date_off = $_POST['date_off'];
-$message = $_POST['message'];
 
-if (isset($_POST['agree'])) {
-  $agree = $_POST['agree'];
-}
+$email = "alexander-drach@mail.ru";
 
 if ($_POST['check'] != 'nospam') exit('Spam detected');
 
-if ($phone && $date_on && $date_off && $agree === 'on') {
+if ($phone && $name) {
   $send_message = "
-    Телефон: $phone<br>
-    Адрес: $address<br>
-    Дата въезда: $date_on<br>
-    Дата выезда: $date_off<br>
-    Описание заявки: $message<br>
-    Согласие: $agree
-   ";
+Имя: $name" . "\n" . 
+"Телефон: $phone" . "\n";
 
-  mail('garanthouse@yandex.ru', 'С сайта квартиры в кызыле посуточно', $send_message);
-  session_start();
-
-  $_SESSION['tel'] = $_POST['tel'];
-  $_SESSION['address'] = $_POST['address'];
-  $_SESSION['date_on'] = $_POST['date_on'];
-  $_SESSION['date_off'] = $_POST['date_off'];
-  $_SESSION['message'] = $_POST['message'];
-  $_SESSION['agree'] = $_POST['agree'];
-
-  header("Location: ./page-message.php");
-} else {
-  echo "<main style='padding: 50px 30px; font-family: sans-serif'>
-            <div style='max-width: 1200px; margin: 0 auto;'>
-                <h1>Ваше сообщение не отправлено!</h1>
-                <p style='color: red'>Заполните все поля.</p>
-                <a href='/' style='color: black; font-size: 24px'>Вернуться на главную</a>
-            </div>
-        </main>";
+  mail($email, 'С сайта Форпроект', $send_message);
 }
+
+$url = 'http://forproekt/wp-content/themes/forproekt_theme';
 ?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ваше сообщение отправлено!</title>
+  <link rel='stylesheet' href='<?php echo $url ?>/assets-gulp/build/css/style.min.css' type='text/css' media='all' />
+</head>
+<body>
+<div class="wrapper">
+    <header class="header">
+        <div class="container">
+          <div class="header_inner">
+              <a class="logo" href="/">
+                  <svg width="386" height="87">
+                      <use xlink:href="<?php echo $url ?>/assets-gulp/build/img/sprite.svg#logo"></use>
+                  </svg>
+              </a>
+              <nav class="nav">
+                <a href="/">На главную</a>
+              </nav>
+          </div>
+        </div>
+    </header>
+    <main>
+      <div class="container">
+        <div class="page-content">
+          <h1>Ваше сообщение отправлено!</h1>
+          <p>Имя: <?php echo $name?></p>
+          <p>Телефон: <?php echo $phone?></p>
+          <a href="/">Вернуться на главную</a>
+        </div>
+      </div>      
+    </main>    
+    <footer class="footer">
+      <div class="container">
+          <div class="footer__inner">
+          <div class="footer__copyright">
+                <div class="copyright">
+                  <p>ООО «Форпроект» Архитектурно-строительная компания</p>
+                  <p>&copy;<?php echo date('Y') ?>, Все права защищены</p>
+                </div>
+            </div>
+          </div>
+      </div>
+    </footer>
+  </div>
+</body>
+
+</html>

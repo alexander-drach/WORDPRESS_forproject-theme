@@ -76,3 +76,15 @@ add_action( 'after_setup_theme', function () {
   register_nav_menu('footer', 'меню footer');
   register_nav_menu('filter', 'меню filter');
 } );
+
+
+add_filter( 'upload_mimes', 'svg_upload_allow' );
+
+# Добавляет SVG в список разрешенных для загрузки файлов.
+function svg_upload_allow( $mimes ) {
+	$mimes['svg']  = 'image/svg+xml';
+
+	return $mimes;
+}
+
+add_image_size( 'project-thumb', 516, 480, true );

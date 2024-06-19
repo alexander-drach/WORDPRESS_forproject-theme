@@ -3,24 +3,44 @@
   grid-template-columns: repeat(4, 1fr);
   column-gap: 20px;
   row-gap: 120px;
+
+  @include vp-1023 {
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 20px;
+    row-gap: 30px;
+  }
+
+  @include vp-639 {
+    grid-template-columns: repeat(1, 1fr);
+    column-gap: 20px;
+    row-gap: 30px;
+  }
 }
 
 .workers__item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   text-align: center;
   color: #252233;
   line-height: 140%;
 }
 
+.workers__icon {
+  margin-bottom: 24px;
+}
+
 .workers__first-name {
-  display: block;
+  // display: block;
   font-size: 20px;
 
 }
 
 .workers__last-name {
-  display: block;
+  display: inline-block;
   font-size: 20px;
   color: #252233;
+  margin-right: 10px;
 }
 
 .workers__position {
