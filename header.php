@@ -24,6 +24,11 @@
                       <use xlink:href="<?php echo get_template_directory_uri() ?>/assets-gulp/build/img/sprite.svg#logo"></use>
                   </svg>
               </a>
+              <a class="logo-mobile" href="/">
+                  <svg width="77" height="32">
+                      <use xlink:href="<?php echo get_template_directory_uri() ?>/assets-gulp/build/img/sprite.svg#logo-mobile"></use>
+                  </svg>
+              </a>
               <nav class="nav">
                 <?php wp_nav_menu( array( 'container' => 'none', 'menu_class' => 'list main-menu', 'theme_location' => 'header' ) ); ?>
               </nav>              

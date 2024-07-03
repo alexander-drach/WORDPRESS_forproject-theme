@@ -23,6 +23,15 @@
             background-color: #3FA9F5;
         }
     }
+
+    &--red {
+        background-color: #FF512D;
+        color: $color-default-white;
+
+        @include hover-focus {
+            background-color: #3FA9F5;
+        }
+    }
 }
 
 .btn-wrapper {

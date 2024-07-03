@@ -6,17 +6,17 @@
   min-height: 100vh;
   /* stylelint-disable-next-line */
   min-height: calc(100 * var(--vh, 1vh));
-  padding-top: 160px;
+  padding-top: 120px;
 
   @include vp-639 {
-    padding-top: 80px;
+    padding-top: 67px;
   }
 
   &.admin-toolbar {
-    padding-top: 160px;
+    padding-top: 120px;
 
     @include vp-639 {
-      padding-top: 80px;
+      padding-top: 67px;
     }
   }
 

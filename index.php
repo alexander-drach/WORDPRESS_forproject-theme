@@ -10,7 +10,17 @@ Template Name: Страница - Главная
                     $image = get_field('glavnyj_banner');
                     if( !empty( $image ) ): ?>
                         <img class="intro-desktop" src="<?php echo esc_url($image['url']); ?>" alt="<?php echo esc_attr($image['alt']); ?>" />
-                    <?php endif; ?>
+                    <?php endif;
+
+                    $imageMobile = get_field('glavnyj_banner_-_mobilnyj');
+                    if( !empty( $imageMobile ) ): ?>
+                        <img class="intro-mobile" src="<?php echo esc_url($imageMobile['url']); ?>" alt="<?php echo esc_attr($imageMobile['alt']); ?>" />
+                    <?php endif;
+                ?>
+                <div class="container">
+                    <h1><?php the_field('zagolovok_pervogo_bloka')?></h1>
+                    <a href="http://forproekt/proekty/" class="btn btn--red"><?php the_field('tekst_knopki_pervogo_bloka')?></a>
+                </div>         
             </div>
         <div class="container">            
             <section class="project">
