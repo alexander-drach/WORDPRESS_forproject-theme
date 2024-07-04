@@ -1400,7 +1400,7 @@ p:last-child {
   min-height: 100vh;
   /* stylelint-disable-next-line */
   min-height: calc(100 * var(--vh, 1vh));
-  padding-top: 120px;
+  padding-top: 90px;
 }
 @media (max-width: 639px) {
   .wrapper {
@@ -1408,7 +1408,7 @@ p:last-child {
   }
 }
 .wrapper.admin-toolbar {
-  padding-top: 120px;
+  padding-top: 90px;
 }
 @media (max-width: 639px) {
   .wrapper.admin-toolbar {
@@ -2521,7 +2521,7 @@ p:last-child {
   display: block;
   height: 100%;
   width: 100%;
-  background-color: rgba(0, 0, 0, 0.4);
+  background-color: rgba(0, 0, 0, 0.2);
   z-index: 1;
 }
 @media (max-width: 1279px) {
@@ -2568,12 +2568,7 @@ p:last-child {
 .intro .btn {
   position: relative;
   z-index: 2;
-}
-@media (max-width: 479px) {
-  .intro .btn {
-    width: 100%;
-    text-align: center;
-  }
+  padding: 20px 36px;
 }
 .intro img {
   position: absolute;
@@ -2852,7 +2847,7 @@ p:last-child {
 }
 @media (max-width: 639px) {
   .page-content h1 {
-    font-size: 36px;
+    font-size: 26px;
     margin-bottom: 30px;
   }
 }
@@ -2987,6 +2982,18 @@ p:last-child {
   text-align: center;
   padding-left: 60px;
   padding-right: 60px;
+}
+@media (max-width: 1023px) {
+  .services__item {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+}
+@media (max-width: 639px) {
+  .services__item {
+    padding-left: 0;
+    padding-right: 0;
+  }
 }
 
 @media (max-width: 639px) {

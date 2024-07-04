@@ -13,7 +13,7 @@
         display: block;
         height: 100%;
         width: 100%;
-        background-color: rgba(0, 0, 0, 0.4);
+        background-color: rgba(0, 0, 0, 0.2);
         z-index: 1;
     }
 
@@ -63,11 +63,7 @@
     .btn {
         position: relative;
         z-index: 2;
-
-        @include vp-479 {
-            width: 100%;
-            text-align: center;
-        }
+        padding: 20px 36px;
     }
 
     img {

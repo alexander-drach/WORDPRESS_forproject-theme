@@ -20,7 +20,7 @@
         <div class="container">
           <div class="header_inner">
               <a class="logo" href="/">
-                  <svg width="386" height="87">
+                  <svg width="377" height="55">
                       <use xlink:href="<?php echo get_template_directory_uri() ?>/assets-gulp/build/img/sprite.svg#logo"></use>
                   </svg>
               </a>
