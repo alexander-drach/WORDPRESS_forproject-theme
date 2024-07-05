@@ -38,6 +38,7 @@ Template Name: Страница - Услуги
                     </li>
 
                 <?php endforeach; ?>
+                <?php wp_reset_query(); ?>
             </ul>
         </div>
     </main>

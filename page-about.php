@@ -24,12 +24,7 @@ Template Name: Страница - О нас
 
                     <li class="workers__item">
                         <div class="workers__icon">
-                            <?php
-                            $image = get_field('foto');
-                            ?>
-                            <?php if($image) : ?>
-                                <img src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt'] ?>" >
-                            <?php endif ?>
+                            <?php the_post_thumbnail('team-thumb');?>
                         </div>
                         <div>
                             <span class="workers__first-name"><?php the_field('imya'); ?></span>
@@ -39,6 +34,7 @@ Template Name: Страница - О нас
                     </li>
 
                 <?php endforeach; ?>
+                <?php wp_reset_query(); ?>
             </ul>
         </div>
     </main>

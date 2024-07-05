@@ -46,6 +46,7 @@ Template Name: Страница - Главная
                         </a>
 
                     <?php endforeach; ?>
+                    <?php wp_reset_query(); ?>
                 </ul>
                 <div class="btn-wrapper btn-wrapper--center">
                     <a href="http://forproekt/proekty/" class="btn btn--blue">Все проекты</a>
@@ -83,6 +84,7 @@ Template Name: Страница - Главная
                         </li>
 
                     <?php endforeach; ?>
+                    <?php wp_reset_query(); ?>
                 </ul>
                 <div class="btn-wrapper btn-wrapper--center">
                     <a href="http://forproekt/uslugi/" class="btn btn--blue">Все услуги</a>

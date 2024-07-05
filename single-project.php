@@ -48,6 +48,18 @@ Template post type: post
                                  ?>
                              </ul>
                          </div><!-- Авторы проекта, архитекторы -->
+
+                         <div class="info-team-item">
+                            <?php if (get_field('gip')): ?>
+                             <span>ГИП:</span>
+                             <?php endif; ?>
+                             <ul class="info-values-list">
+                                 <?php if (get_field('gip')): ?>
+                                    <li><?php the_field('gip'); ?></li>
+                                <?php endif; ?>
+                             </ul>
+                         </div><!-- ГИП -->
+
                          <div class="info-team-item">
                             <?php if (have_rows('konstruktory')): ?>
                              <span>Конструкторы:</span>
@@ -65,6 +77,7 @@ Template post type: post
                                  ?>
                              </ul>
                          </div><!-- Конструкторы -->
+
                          <div class="info-team-item">
                             <?php if (have_rows('vizualizatory')): ?>
                              <span>Визуализаторы:</span>

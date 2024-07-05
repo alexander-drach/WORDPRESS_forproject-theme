@@ -152,6 +152,7 @@
       list-style-type: none;
       position: relative;
       padding-left: 15px;
+      margin-bottom: 5px;
 
       &::before {
         content: "-";
@@ -189,6 +190,7 @@
       list-style-type: none;
       position: relative;
       padding-left: 15px;
+      margin-bottom: 5px;
 
       &::before {
         content: "-";
@@ -256,6 +258,7 @@
     list-style-type: none;
     position: relative;
     padding-left: 15px;
+    margin-bottom: 5px;
 
     &::before {
       content: "-";
@@ -286,7 +289,7 @@
   height: 56px;
   position: relative;
   border: none;
-  background-color: transparent;
+  background-color: $color-default-black;
   color: $color-default-white;  
 
   &::after {
@@ -297,10 +300,9 @@
 .swiper-button-prev {
   left: 0;
   margin-right: 10px;
-  background-color: #DFDFDF;
 }
 
 .swiper-button-next {
-  background-color: $color-default-black;
+  
   right: 0;
 }

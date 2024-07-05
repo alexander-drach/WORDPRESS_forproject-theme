@@ -3,7 +3,22 @@
 define('PATH_CSS', get_template_directory_uri() . '/assets-gulp/build/css/');
 define('PATH_JS', get_template_directory_uri() . '/assets-gulp/build/js/');
 
-// РЕГИСТРАЦИЯ НВЫХ  ТИПОВ ПОСТОВ
+// РЕГИСТРАЦИЯ НОВЫХ  ТИПОВ ПОСТОВ
+
+function wpschool_remove_default_image_sizes( $sizes ) {
+    return array_diff( $sizes, array(
+        'thumbnail',
+        'medium',
+        'medium_large',
+        'large',
+    ) );
+}
+add_filter( 'intermediate_image_sizes', 'wpschool_remove_default_image_sizes' );
+
+add_image_size( 'project-thumb', 516, 480, true );
+add_image_size( 'team-thumb', 366, 494, true );
+add_image_size( 'news-thumb', 500, 301, true );
+add_image_size( 'single-news', 1000, 462, true );
 
 // пост - услуги
 add_action('init', function(){
@@ -51,9 +66,38 @@ add_action('init', function(){
         'has_archive' => true,
         'rewrite' => [
             'with_front' => false
-        ]
+        ],
+        'supports' => array('title', 'editor', 'thumbnail'),
     ]);
 });
+
+// пост - новость
+add_action('init', function(){
+    register_post_type('news', [
+        'labels' => [
+            'name'               => 'Новости',
+            'singular_name'      => 'Новость',
+            'add_new'            => 'Добавить новую',
+            'add_new_item'       => 'Добавить новость',
+            'edit_item'          => 'Редактировать новость',
+            'new_item'           => 'Новая новость',
+            'view_item'          => 'Посмотреть новость',
+            'search_items'       => 'Найти новость',
+            'not_found'          => 'Новости не найдены',
+            'not_found_in_trash' => 'В корзине новостей не найдено',
+            'parent_item_colon'  => '',
+            'menu_name'          => 'Новости'
+        ],
+        'public' => true,
+        'has_archive' => true,
+        'rewrite' => [
+            'with_front' => false
+        ],
+        'supports' => array('title', 'editor', 'thumbnail'),
+    ]);
+});
+
+add_theme_support( 'post-thumbnails', array( 'f_workers', ) );
 
 // подключение стилей
 add_action( 'wp_enqueue_scripts', function () {
@@ -86,5 +130,3 @@ function svg_upload_allow( $mimes ) {
 
 	return $mimes;
 }
-
-add_image_size( 'project-thumb', 516, 480, true );
