@@ -1,4 +1,21 @@
-<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><symbol id="icon-email" viewBox="0 0 32 32"><g fill="none">
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><defs>
+<filter id="filter0_d_375_920" x="0" y="0" width="68" height="68" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+<feFlood flood-opacity="0" result="BackgroundImageFix"/>
+<feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+<feOffset dy="4"/>
+<feGaussianBlur stdDeviation="2"/>
+<feComposite in2="hardAlpha" operator="out"/>
+<feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0"/>
+<feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_375_920"/>
+<feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_375_920" result="shape"/>
+</filter>
+</defs><symbol id="arrow-link" viewBox="0 0 68 68"><g fill="none">
+<g filter="url(#filter0_d_375_920)">
+<circle cx="34" cy="30" r="29" stroke="white" stroke-width="2" shape-rendering="crispEdges"/>
+</g>
+<path d="M45.2071 30.7071C45.5976 30.3166 45.5976 29.6834 45.2071 29.2929L38.8431 22.9289C38.4526 22.5384 37.8195 22.5384 37.4289 22.9289C37.0384 23.3195 37.0384 23.9526 37.4289 24.3431L43.0858 30L37.4289 35.6569C37.0384 36.0474 37.0384 36.6805 37.4289 37.0711C37.8195 37.4616 38.4526 37.4616 38.8431 37.0711L45.2071 30.7071ZM24.5 31H44.5V29H24.5V31Z" fill="white"/>
+
+</g></symbol><symbol id="icon-email" viewBox="0 0 32 32"><g fill="none">
 <path fill-rule="evenodd" clip-rule="evenodd" d="M5.33366 5.33398H26.667C28.1398 5.33398 29.3337 6.52789 29.3337 8.00065V24.0007C29.3337 25.4735 28.1398 26.6673 26.667 26.6673H5.33366C3.8609 26.6673 2.66699 25.4735 2.66699 24.0007V8.00065C2.66699 6.52789 3.8609 5.33398 5.33366 5.33398ZM18.2003 20.6007L26.667 14.6673V11.8673L16.867 18.734C16.3458 19.0957 15.6549 19.0957 15.1337 18.734L5.33366 11.8673V14.6673L13.8003 20.6007C15.1217 21.5243 16.879 21.5243 18.2003 20.6007Z" fill="black"/>
 </g></symbol><symbol id="icon-geo" viewBox="0 0 20 28"><g fill="none">
 <path d="M10.0005 0.666016C4.67516 0.666016 0.342773 4.99842 0.342773 10.3236C0.342773 16.9324 8.98539 26.6344 9.35339 27.0441C9.69899 27.4291 10.3025 27.4284 10.6475 27.0441C11.0154 26.6344 19.6581 16.9324 19.6581 10.3236C19.6579 4.99842 15.3257 0.666016 10.0005 0.666016ZM10.0005 15.1827C7.32115 15.1827 5.14147 13.0029 5.14147 10.3236C5.14147 7.64435 7.3212 5.46466 10.0005 5.46466C12.6797 5.46466 14.8594 7.6444 14.8594 10.3237C14.8594 13.0029 12.6797 15.1827 10.0005 15.1827Z" fill="black"/>

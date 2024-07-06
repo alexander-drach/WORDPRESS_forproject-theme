@@ -23,18 +23,27 @@ Template Name: Страница - Новости
             global $post;
             
             foreach( $my_posts as $post ) : ?>
-                <a href="<?php the_permalink(); ?>">
+                
                     <div class="resent-post">
                         <?php the_post_thumbnail(); ?>
                         <div class="resent-post__content">
                         <div class="label-news label-news--all" >Новости</div>                          
-                            <h3><?php the_title(); ?></h3>
-                            <div class="resent-post__date">
-                                <?php the_date('j F Y'); ?>
-                            </div>
+                            <a href="<?php the_permalink(); ?>">
+                                <h3><?php the_title(); ?></h3>
+                            </a>
+                            <div class="reset-post__footer">
+                                <div class="resent-post__date">
+                                    <?php the_date('j F Y'); ?>
+                                </div>
+                                <a class="arrow-link" href="<?php the_permalink(); ?>">
+                                <svg width="60" height="60">
+                                    <use xlink:href="<?php echo get_template_directory_uri() ?>/assets-gulp/build/img/sprite.svg#arrow-link"></use>
+                                </svg>
+                                </a>
+                            </div>                            
                         </div>
                     </div>
-                </a>
+                
             <?php
                 endforeach;
                 wp_reset_postdata(); // сброс
@@ -57,7 +66,15 @@ Template Name: Страница - Новости
             
 
             <ul class="list news__list">
-                <?php while(have_posts()): the_post(); ?>
+                <?php 
+                $i = 0;
+                while(have_posts()): the_post();
+                $i++;
+                if($i === 1) {
+                    continue;
+                }
+                ?>
+
                 <a href="<?php the_permalink()?>">
                     <li class="news__item">
                         <div class="news__thumb">
@@ -69,6 +86,7 @@ Template Name: Страница - Новости
                         </div>
                     </li>
                 </a>
+                
                 <?php endwhile; ?>                
             </ul>
             <div class="pager">
